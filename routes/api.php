@@ -13,6 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// GET /api/emails/{$email} and POST /api/emails
+Route::resource('emails', 'EmailController')
+    ->only(['store', 'show']);
